@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Main (JavaFX)",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "--module-path",
+        "${input:javafxLib}",
+        "--add-modules",
+        "javafx.controls",
+        "Main.java"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$javac"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "javafxLib",
+      "type": "promptString",
+      "description": "JavaFX lib folder path (example: C:/javafx-sdk-23/lib)",
+      "default": "C:/javafx-sdk-23/lib"
+    }
+  ]
+}

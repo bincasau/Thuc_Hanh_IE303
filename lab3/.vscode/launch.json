@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Main (JavaFX)",
+      "request": "launch",
+      "mainClass": "Main",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Main (JavaFX)",
+      "vmArgs": "--module-path \"${input:javafxLib}\" --add-modules javafx.controls"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "javafxLib",
+      "type": "promptString",
+      "description": "JavaFX lib folder path (example: C:/javafx-sdk-23/lib)",
+      "default": "C:/javafx-sdk-23/lib"
+    }
+  ]
+}
